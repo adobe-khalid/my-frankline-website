@@ -100,6 +100,7 @@ export default async function decorate(block) {
 
     // decorate nav DOM
     const nav = document.createElement('nav');
+
     nav.id = 'nav';
     nav.innerHTML = html;
 
@@ -112,6 +113,7 @@ export default async function decorate(block) {
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
+        // navSection.innerHTML = navSection.innerHTML.toUpperCase();
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
         navSection.addEventListener('click', () => {
           if (isDesktop.matches) {
@@ -135,6 +137,19 @@ export default async function decorate(block) {
     // prevent mobile nav behavior on window resize
     toggleMenu(nav, navSections, isDesktop.matches);
     isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+
+    const navTools = nav.querySelector('.nav-tools');
+    if (navTools) {
+      const searchInput = document.createElement('input');
+      searchInput.type = 'search';
+      searchInput.placeholder = navTools.innerText;
+
+      const searchIcon = navTools.querySelector('span');
+      navTools.innerText = '';
+
+      navTools.append(searchIcon);
+      navTools.append(searchInput);
+    }
 
     decorateIcons(nav);
     const navWrapper = document.createElement('div');

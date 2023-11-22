@@ -32,7 +32,7 @@ header nav[aria-expanded="true"] {
 
 @media (min-width: 600px) {
   header nav {
-    padding: 0 2rem;
+    padding: 50px 2rem;
   }
 }
 
@@ -55,6 +55,12 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  padding: 15px 17px;
+}
+
+header nav .nav-sections a:hover {
+  text-decoration: none;
+  background-color: var(--link-hover-color);
 }
 
 /* hamburger */
@@ -172,6 +178,7 @@ header nav .nav-sections ul  {
   padding-left: 0;
   font-size: var(--body-font-size-s);
   font-weight: 500;
+  justify-content: end;
 }
 
 header nav .nav-sections ul > li {
@@ -225,7 +232,6 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 2em;
     margin: 0;
     font-size: var(--body-font-size-xs);
   }
@@ -272,4 +278,20 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  position: relative;
+}
+
+header input {
+  background-color: #ebebeb8a;
+  height: 40px;
+  padding: 0 2rem;
+  border: none;
+  width: calc(100% - 4rem);
+}
+
+header .icon-search {
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  height: 18px;
 }

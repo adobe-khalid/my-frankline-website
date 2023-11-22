@@ -31,3 +31,35 @@
     order: unset;
   }
 }
+
+.magazine img {
+  object-fit: cover;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .magazine .columns > div > div:first-child {
+    flex: 1 1 60%;
+  }
+
+  .magazine .columns > div > div:last-child {
+    flex: 1 1 40%;
+  }
+}
+
+.magazine .columns {
+  background-color: var(--highlight-background-color);
+}
+
+.magazine .columns > div > div:last-child p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.magazine .columns > div > div:last-child h2 {
+  font-size: 32px;
+}
+
+.magazine .columns > div > div:last-child p:nth-of-type(2) {
+  font-size: 14px;
+}
